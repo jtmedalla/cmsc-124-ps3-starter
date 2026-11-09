@@ -60,8 +60,17 @@ ENV, because the caller keeps using it after the extension goes out of scope."
 
 Every init is evaluated in ENV before any name is bound, so the bindings happen
 in parallel and an init cannot see a name the same LET introduces."
-  (declare (ignore expr env))
-  (error "eval-let is not implemented"))
+  ;;; Note: the following code is AI assisted code
+  ;;; each variable declared is meant to build the required parameters
+  ;;; of the extend-env function. mapcar is used to generate a list containing
+  ;;; the names of each variable and their corresponding value
+  (let* ((bindings (cadr expr))
+          (body (caddr expr))
+          (params (mapcar #'car bindings))
+          (args (mapcar (lambda (binding)
+                          (eval-expr (cadr binding) env))
+                        bindings)))
+    (eval-expr body (extend-env params args env))))
 
 ;;; E4 -- lambda and application.
 
@@ -94,4 +103,5 @@ number is not a cons, so the atom tests come before the list tests."
     ((numberp expr) expr)
     ((symbolp expr) (lookup expr env))
     ((member (car expr) '(+ * -)) (apply-op (car expr) (eval-operands (cdr expr) env)))
+    ((equalp 'LET (car expr)) (eval-let expr env))
     (t (error "Cannot evaluate: ~S" expr))))
