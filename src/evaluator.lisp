@@ -45,7 +45,9 @@ arguments and MAPCAR hands its function one."
 (defun apply-op (op values)
   "Apply the arithmetic operator OP to the two numbers in VALUES.
 OP is the symbol +, -, or *. Signal an error for anything else."
-  (funcall op (nth 0 values) (nth 1 values)))
+  (if (member op '(+ - *))
+    (funcall op (nth 0 values) (nth 1 values))
+    (error "operator must be of type +, -, or *")))
 
 ;;; E3 -- let.
 
