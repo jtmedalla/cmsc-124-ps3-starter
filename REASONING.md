@@ -40,7 +40,7 @@ The `cons` function takes the value of the first argument, appends it to the sta
 `null` is used to test for an empty list. It returns `T` if yes and `nil` if no. Then the `if` special-operator checks for the truth value of its first argument, returning its second argument if `true` and its third argument if `false`.
 
 ## P09
-Replace this line with the rule behind this case's four fields.
+`and` is the logical and of the LISP language. It takes any number of arguments and checks its truth value. If any argument is read as `nil` then the function returns `nil` as its false value.
 
 ## P10
 Replace this line with the rule behind this case's four fields.
