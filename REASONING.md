@@ -68,4 +68,4 @@ Since `mapcar` requries that its first argument is a function, lambda can be use
 Correction: `lambda` returns a function object when it is declared.
 
 ## P16
-Replace this line with the rule behind this case's four fields.
+When `lambda` is defined, it captures the first declaration of factor, which is `2`. By the time `f` is called through `funcall`, it calls the function with the factor being the value of `2`.
