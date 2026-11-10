@@ -12,7 +12,9 @@ wrongly. Say what you predicted, what CLISP printed, and which rule you
 misread. Those entries belong in the correction commits.
 
 ## P01
-The quote symbol reads the contents of the parenthesis as a list and is not evaluated. Even if the starting symbol is a `+` operator, the value is returned as a list
+The quote symbol reads the contents of the parenthesis as a list and is not evaluated. Even if the starting symbol is a `+` operator, the value is returned as a list.
+
+Correction: the first `'` is not counted in the evaluation. Thus the entire function is evaluated resulting into 7. It has a kind of integer and a function as its operator.
 
 ## P02
 Replace this line with the rule behind this case's four fields.
