@@ -23,7 +23,7 @@ According to the required reading, `quote` is a special operator that reads the 
 `nil` is a special case in Lisp since it can mean multiple things. It can represent an empty list, and an empty value. Additionally, it is also used to represent `false` in the language. It is for this reason that the length of a nil value is 0 and not none. 
 
 ## P04
-Replace this line with the rule behind this case's four fields.
+A lone symbol `t` is interpreted by LISP as a symbol. Since a symbol is atomic, it has neither a length or an operator. The value that LISP would return is just the symbol itself thus `t`.
 
 ## P05
 Replace this line with the rule behind this case's four fields.

@@ -2,7 +2,7 @@ id	value	kind	length	operator
 P01	7	integer	none	function
 P02	(+,1,2)	cons	3	special-operator
 P03	nil	null	0	none
-P04	TODO	TODO	TODO	TODO
+P04	t	symbol	none	none
 P05	TODO	TODO	TODO	TODO
 P06	TODO	TODO	TODO	TODO
 P07	TODO	TODO	TODO	TODO
