@@ -65,5 +65,7 @@ Since `mapcar` requries that its first argument is a function, lambda can be use
 ## P15
 `lambda` does not have a return value since it defines a one-time function. 
 
+Correction: `lambda` returns a function object when it is declared.
+
 ## P16
 Replace this line with the rule behind this case's four fields.
