@@ -57,7 +57,7 @@ Correction: the `defun` macro returns the name of the function.
 `labels` is used to group defining functions. One special feature of the special-operator is it allows recursion. The example creates a list that counts down to 0.
 
 ## P13
-Replace this line with the rule behind this case's four fields.
+`mapcar` is used when the program wants to run the function for all the elements of a list. In the example, it runs the function `length` for all elements of `mapcar`'s second element list.
 
 ## P14
 Replace this line with the rule behind this case's four fields.
