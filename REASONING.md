@@ -63,7 +63,7 @@ Correction: the `defun` macro returns the name of the function.
 Since `mapcar` requries that its first argument is a function, lambda can be used as a shortcut instead of defining the function separately.
 
 ## P15
-Replace this line with the rule behind this case's four fields.
+`lambda` does not have a return value since it defines a one-time function. 
 
 ## P16
 Replace this line with the rule behind this case's four fields.
