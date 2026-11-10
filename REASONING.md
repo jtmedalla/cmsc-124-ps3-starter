@@ -26,7 +26,7 @@ According to the required reading, `quote` is a special operator that reads the 
 A lone symbol `t` is interpreted by LISP as a symbol. Since a symbol is atomic, it has neither a length or an operator. The value that LISP would return is just the symbol itself thus `t`.
 
 ## P05
-Replace this line with the rule behind this case's four fields.
+`symbolp` checks the next element in the list if it is a symbol and returns `T` or `nil` representing `true` and `false` respectively. In this case, `nil` is considered as a self-evaluating symbol and would thus pass `symbolp`'s check.
 
 ## P06
 Replace this line with the rule behind this case's four fields.
