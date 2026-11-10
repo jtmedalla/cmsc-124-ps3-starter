@@ -31,7 +31,7 @@ A lone symbol `t` is interpreted by LISP as a symbol. Since a symbol is atomic, 
 Correction: Despite LISP documentation changing every non-string into uppercase, the problem set requires a different syntax. Thus `T` is instead supposed to be `t`. Additionally, `symbolp` despite being able to be considered as a branching type of operator, is considered as a function rather than a special-operator.
 
 ## P06
-Replace this line with the rule behind this case's four fields.
+`car` function takes the first element of the list in its atomic form. In the case of an empty list, its first value would be `nil`.
 
 ## P07
 Replace this line with the rule behind this case's four fields.
