@@ -37,7 +37,7 @@ Correction: Despite LISP documentation changing every non-string into uppercase,
 The `cons` function takes the value of the first argument, appends it to the start of the second argument and returns the longer list.
 
 ## P08
-Replace this line with the rule behind this case's four fields.
+`null` is used to test for an empty list. It returns `T` if yes and `nil` if no. Then the `if` special-operator checks for the truth value of its first argument, returning its second argument if `true` and its third argument if `false`.
 
 ## P09
 Replace this line with the rule behind this case's four fields.
