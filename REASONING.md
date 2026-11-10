@@ -45,7 +45,8 @@ The `cons` function takes the value of the first argument, appends it to the sta
 Correction: and is a special operator since and is invoked before all the values are finished being evaluated to allow it to perform short-circuiting. 
 
 ## P10
-Replace this line with the rule behind this case's four fields.
+`progn` is a special operator used to evaluate 0 or more forms. It can be used to group similar sections but only returns *all* the values in the last form. `defvar` is used to define a global variables. \*ps3-rate\* is a global variable in the context of the small subprogram. `defun` is used to define functions in LISP. 
+LISP has shadowing rules, in the case of the small subprogram, the variable inside the let binds tighter than the global variable. This causes the value used by the function to change into the one defined by the let.
 
 ## P11
 Replace this line with the rule behind this case's four fields.
