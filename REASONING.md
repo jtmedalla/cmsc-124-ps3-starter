@@ -51,6 +51,8 @@ LISP has shadowing rules, in the case of the small subprogram, the variable insi
 ## P11
 `defun` it is a macro that defines a function. Additionally, it does not have a return value unless it is invoked.
 
+Correction: the `defun` macro returns the name of the function.
+
 ## P12
 Replace this line with the rule behind this case's four fields.
 
