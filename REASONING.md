@@ -12,7 +12,7 @@ wrongly. Say what you predicted, what CLISP printed, and which rule you
 misread. Those entries belong in the correction commits.
 
 ## P01
-Replace this line with the rule behind this case's four fields.
+The quote symbol reads the contents of the parenthesis as a list and is not evaluated. Even if the starting symbol is a `+` operator, the value is returned as a list
 
 ## P02
 Replace this line with the rule behind this case's four fields.
