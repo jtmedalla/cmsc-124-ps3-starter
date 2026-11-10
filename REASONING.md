@@ -17,7 +17,7 @@ The quote symbol reads the contents of the parenthesis as a list and is not eval
 Correction: the first `'` is not counted in the evaluation. Thus the entire function is evaluated resulting into 7. It has a kind of integer and a function as its operator.
 
 ## P02
-Replace this line with the rule behind this case's four fields.
+According to the required reading, `quote` is a special operator that reads the list and returns its contents as is, even if the head of the list is a function or special operator. Therefore, the result of P02 is a list containg +, 1, and 2.
 
 ## P03
 Replace this line with the rule behind this case's four fields.
