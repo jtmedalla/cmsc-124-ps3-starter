@@ -49,7 +49,7 @@ Correction: and is a special operator since and is invoked before all the values
 LISP has shadowing rules, in the case of the small subprogram, the variable inside the let binds tighter than the global variable. This causes the value used by the function to change into the one defined by the let.
 
 ## P11
-Replace this line with the rule behind this case's four fields.
+`defun` it is a macro that defines a function. Additionally, it does not have a return value unless it is invoked.
 
 ## P12
 Replace this line with the rule behind this case's four fields.
