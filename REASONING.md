@@ -28,6 +28,8 @@ A lone symbol `t` is interpreted by LISP as a symbol. Since a symbol is atomic, 
 ## P05
 `symbolp` checks the next element in the list if it is a symbol and returns `T` or `nil` representing `true` and `false` respectively. In this case, `nil` is considered as a self-evaluating symbol and would thus pass `symbolp`'s check.
 
+Correction: Despite LISP documentation changing every non-string into uppercase, the problem set requires a different syntax. Thus `T` is instead supposed to be `t`. Additionally, `symbolp` despite being able to be considered as a branching type of operator, is considered as a function rather than a special-operator.
+
 ## P06
 Replace this line with the rule behind this case's four fields.
 
