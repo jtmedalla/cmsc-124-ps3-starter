@@ -42,6 +42,8 @@ The `cons` function takes the value of the first argument, appends it to the sta
 ## P09
 `and` is the logical and of the LISP language. It takes any number of arguments and checks its truth value. If any argument is read as `nil` then the function returns `nil` as its false value.
 
+Correction: and is a special operator since and is invoked before all the values are finished being evaluated to allow it to perform short-circuiting. 
+
 ## P10
 Replace this line with the rule behind this case's four fields.
 
