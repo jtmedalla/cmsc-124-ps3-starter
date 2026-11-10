@@ -1,7 +1,7 @@
 id	value	kind	length	operator
 P01	7	integer	none	function
 P02	(+,1,2)	cons	3	special-operator
-P03	TODO	TODO	TODO	TODO
+P03	nil	null	0	none
 P04	TODO	TODO	TODO	TODO
 P05	TODO	TODO	TODO	TODO
 P06	TODO	TODO	TODO	TODO

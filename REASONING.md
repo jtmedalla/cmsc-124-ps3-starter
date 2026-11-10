@@ -20,7 +20,7 @@ Correction: the first `'` is not counted in the evaluation. Thus the entire func
 According to the required reading, `quote` is a special operator that reads the list and returns its contents as is, even if the head of the list is a function or special operator. Therefore, the result of P02 is a list containg +, 1, and 2.
 
 ## P03
-Replace this line with the rule behind this case's four fields.
+`nil` is a special case in Lisp since it can mean multiple things. It can represent an empty list, and an empty value. Additionally, it is also used to represent `false` in the language. It is for this reason that the length of a nil value is 0 and not none. 
 
 ## P04
 Replace this line with the rule behind this case's four fields.
