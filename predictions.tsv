@@ -5,7 +5,7 @@ P03	nil	null	0	none
 P04	t	symbol	none	none
 P05	t	symbol	none	function
 P06	nil	none	0	function
-P07	TODO	TODO	TODO	TODO
+P07	(1,2,3)	cons	3	function
 P08	TODO	TODO	TODO	TODO
 P09	TODO	TODO	TODO	TODO
 P10	TODO	TODO	TODO	TODO

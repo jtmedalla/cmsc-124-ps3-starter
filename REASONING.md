@@ -34,7 +34,7 @@ Correction: Despite LISP documentation changing every non-string into uppercase,
 `car` function takes the first element of the list in its atomic form. In the case of an empty list, its first value would be `nil`.
 
 ## P07
-Replace this line with the rule behind this case's four fields.
+The `cons` function takes the value of the first argument, appends it to the start of the second argument and returns the longer list.
 
 ## P08
 Replace this line with the rule behind this case's four fields.
