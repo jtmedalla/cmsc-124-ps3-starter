@@ -60,7 +60,7 @@ Correction: the `defun` macro returns the name of the function.
 `mapcar` is used when the program wants to run the function for all the elements of a list. In the example, it runs the function `length` for all elements of `mapcar`'s second element list.
 
 ## P14
-Replace this line with the rule behind this case's four fields.
+Since `mapcar` requries that its first argument is a function, lambda can be used as a shortcut instead of defining the function separately.
 
 ## P15
 Replace this line with the rule behind this case's four fields.
