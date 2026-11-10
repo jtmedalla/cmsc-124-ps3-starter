@@ -54,7 +54,7 @@ LISP has shadowing rules, in the case of the small subprogram, the variable insi
 Correction: the `defun` macro returns the name of the function.
 
 ## P12
-Replace this line with the rule behind this case's four fields.
+`labels` is used to group defining functions. One special feature of the special-operator is it allows recursion. The example creates a list that counts down to 0.
 
 ## P13
 Replace this line with the rule behind this case's four fields.
