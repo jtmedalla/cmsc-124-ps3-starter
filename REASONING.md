@@ -12,49 +12,49 @@ wrongly. Say what you predicted, what CLISP printed, and which rule you
 misread. Those entries belong in the correction commits.
 
 ## P01
-Replace this line with the rule behind this case's four fields.
+(+ 1 (* 2 3)) evaluates (* 2 3) first, giving 6, then adds 1 to get 7. The result is an integer, so its length is none.
 
 ## P02
-Replace this line with the rule behind this case's four fields.
+''(+ 1 2) quotes the list instead of evaluating it. The result is (+ 1 2), with length 3.
 
 ## P03
-Replace this line with the rule behind this case's four fields.
+'nil returns NIL, representing the empty list. Its length is 0.
 
 ## P04
-Replace this line with the rule behind this case's four fields.
+'t returns the symbol T, representing true. Symbols have no sequence length.
 
 ## P05
-Replace this line with the rule behind this case's four fields.
+symbolp checks whether its argument is a symbol. NIL is a symbol, so the result is T.
 
 ## P06
-Replace this line with the rule behind this case's four fields.
+(car '()) gets the first element of an empty list. The result is NIL, with length 0.
 
 ## P07
-Replace this line with the rule behind this case's four fields.
+cons adds 1 to the beginning of (2 3). The result is (1 2 3), with length 3.
 
 ## P08
-Replace this line with the rule behind this case's four fields.
+(null '()) returns T, so the if expression returns EMPTY. The result is a symbol.
 
 ## P09
-Replace this line with the rule behind this case's four fields.
+and stops evaluating when it encounters NIL. Therefore, the result is NIL, with length 0.
 
 ## P10
-Replace this line with the rule behind this case's four fields.
+progn executes each form sequentially. The dynamic binding changes *ps3-rate* to 10, so (ps3-scale 3) returns 30.
 
 ## P11
-Replace this line with the rule behind this case's four fields.
+defun defines the function PS3-TWICE. It returns the function name as a symbol, not the function's calculated result.
 
 ## P12
-Replace this line with the rule behind this case's four fields.
+labels defines a recursive function that counts down from 3. The result is (3 2 1), with length 3.
 
 ## P13
-Replace this line with the rule behind this case's four fields.
+mapcar applies length to each nested list. Their lengths produce (2 0 1), with length 3.
 
 ## P14
-Replace this line with the rule behind this case's four fields.
+mapcar applies the lambda function to square each number. The result is (1 4 9), with length 3.
 
 ## P15
-Replace this line with the rule behind this case's four fields.
+lambda creates an anonymous function that doubles its argument. It returns a function object, so its length is none.
 
 ## P16
-Replace this line with the rule behind this case's four fields.
+The function f captures the lexical value of factor, which is 2. Therefore, (funcall f 3) returns 6.
