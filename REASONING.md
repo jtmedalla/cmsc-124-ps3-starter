@@ -58,3 +58,11 @@ lambda creates an anonymous function that doubles its argument. It returns a fun
 
 ## P16
 The function f captures the lexical value of factor, which is 2. Therefore, (funcall f 3) returns 6.
+
+## Corrections:
+P03, P04, P05, P06, P08, P09, P11 - Should be in lowercase. The grader writes symbols in
+lower case.
+
+P02 - Value should be separated by commas. The head is quote, so operator shopuld be special-operator
+P15 - The grader writes any function object as `#<function>`. I also wrote the wrong
+operator: `lambda` is a macro, so the cell reads `macro`.
