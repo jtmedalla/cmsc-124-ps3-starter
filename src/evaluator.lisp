@@ -81,19 +81,16 @@ Return the list (:closure params body env). ENV is the environment the lambda
 was written in, not the one it will later be called from. Saving the wrong one
 is what makes the difference between 3 and 101 in the case the manual walks
 through."
-  (list :closure params body env))
+  (declare (ignore params body env))
+  (error "make-closure is not implemented"))
 
 (defun apply-closure (closure args)
   "Run CLOSURE on ARGS.
 
 The parameters join the environment the closure captured. Signal an error when
 CLOSURE is not a closure, and when the argument count does not match."
-  (unless (and (consp closure) (eq (car closure) :closure))
-    (error "Not a closure: ~S" closure))
-  (destructuring-bind (params body env) (cdr closure)
-    (unless (= (length params) (length args))
-      (error "Expected ~D arguments, got ~D" (length params) (length args)))
-    (eval-expr body (extend-env params args env))))
+  (declare (ignore closure args))
+  (error "apply-closure is not implemented"))
 
 ;;; The dispatcher.
 
@@ -102,14 +99,9 @@ CLOSURE is not a closure, and when the argument count does not match."
 
 Order the branches with care. NIL is a symbol as well as the empty list, and a
 number is not a cons, so the atom tests come before the list tests."
-  (cond
+   (cond
     ((numberp expr) expr)
     ((symbolp expr) (lookup expr env))
-    ((atom expr) (error "Cannot evaluate: ~S" expr))
-    ((member (car expr) '(+ * -))
-     (apply-op (car expr) (eval-operands (cdr expr) env)))
-    ((eq (car expr) 'let) (eval-let expr env))
-    ((eq (car expr) 'lambda)
-     (make-closure (cadr expr) (caddr expr) env))
-    (t (apply-closure (eval-expr (car expr) env)
-                      (eval-operands (cdr expr) env)))))
+    ((member (car expr) '(+ * -)) (apply-op (car expr) (eval-operands (cdr expr) env)))
+    ((equalp 'LET (car expr)) (eval-let expr env))
+    (t (error "Cannot evaluate: ~S" expr))))
