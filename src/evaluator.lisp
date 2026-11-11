@@ -102,7 +102,7 @@ CLOSURE is not a closure, and when the argument count does not match."
 
 Order the branches with care. NIL is a symbol as well as the empty list, and a
 number is not a cons, so the atom tests come before the list tests."
-  (cond
+   (cond
     ((numberp expr) expr)
     ((symbolp expr) (lookup expr env))
     ((atom expr) (error "Cannot evaluate: ~S" expr))
