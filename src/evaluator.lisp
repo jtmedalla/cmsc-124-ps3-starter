@@ -35,18 +35,16 @@ name. Signal an error when NAME is not bound at all."
 
 (defun eval-operands (exprs env)
   "Every expression in EXPRS, evaluated in the same ENV, as a list.
-
 MAPCAR and a LAMBDA do this in one line. Watch the arity: EVAL-EXPR takes two
 arguments and MAPCAR hands its function one."
-  (declare (ignore exprs env))
-  (error "eval-operands is not implemented"))
+  (mapcar #'(lambda (a) (eval-expr a env)) exprs))
 
 (defun apply-op (op values)
   "Apply the arithmetic operator OP to the two numbers in VALUES.
-
 OP is the symbol +, -, or *. Signal an error for anything else."
-  (declare (ignore op values))
-  (error "apply-op is not implemented"))
+  (if (member op '(+ - *))
+    (funcall op (nth 0 values) (nth 1 values))
+    (error "operator must be of type +, -, or *")))
 
 ;;; E3 -- let.
 
@@ -55,16 +53,24 @@ OP is the symbol +, -, or *. Signal an error for anything else."
 
 MAPCAR takes two lists and #'CONS pairs them. Build a new list. Do not modify
 ENV, because the caller keeps using it after the extension goes out of scope."
-  (declare (ignore params args env))
-  (error "extend-env is not implemented"))
+  (append (mapcar #'cons params args) env))
 
 (defun eval-let (expr env)
   "Evaluate (let ((name init) ...) body).
 
 Every init is evaluated in ENV before any name is bound, so the bindings happen
 in parallel and an init cannot see a name the same LET introduces."
-  (declare (ignore expr env))
-  (error "eval-let is not implemented"))
+  ;;; Note: the following code is AI assisted code
+  ;;; each variable declared is meant to build the required parameters
+  ;;; of the extend-env function. mapcar is used to generate a list containing
+  ;;; the names of each variable and their corresponding value
+  (let* ((bindings (cadr expr))
+          (body (caddr expr))
+          (params (mapcar #'car bindings))
+          (args (mapcar (lambda (binding)
+                          (eval-expr (cadr binding) env))
+                        bindings)))
+    (eval-expr body (extend-env params args env))))
 
 ;;; E4 -- lambda and application.
 
@@ -96,4 +102,6 @@ number is not a cons, so the atom tests come before the list tests."
    (cond
     ((numberp expr) expr)
     ((symbolp expr) (lookup expr env))
+    ((member (car expr) '(+ * -)) (apply-op (car expr) (eval-operands (cdr expr) env)))
+    ((equalp 'LET (car expr)) (eval-let expr env))
     (t (error "Cannot evaluate: ~S" expr))))
